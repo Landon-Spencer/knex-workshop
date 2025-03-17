@@ -1,0 +1,27 @@
+{
+  "name": "knex-workshop",
+  "version": "1.0.0",
+  "description": "For this activity, you will fulfill the following requirements:",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon ./src/app.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Landon-Spencer/knex-workshop.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Landon-Spencer/knex-workshop/issues"
+  },
+  "homepage": "https://github.com/Landon-Spencer/knex-workshop#readme",
+  "dependencies": {
+    "express": "^4.21.2",
+    "knex": "^3.1.0",
+    "nodemon": "^3.1.9",
+    "pg": "^8.14.1"
+  }
+}
