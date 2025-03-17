@@ -8,7 +8,7 @@ const knex = require('knex')(require('../knexfile.js')[process.env.NODE_ENV||'de
 app.use(express.json());
 
 app.get('/', (req, res) => {
-  res.send('Application up and running.')
+  res.send('Disney World API')
 })
 
 app.listen(PORT, () => {
@@ -30,6 +30,16 @@ app.get('/rides', (request, response) => {
     .orderBy("id")
     .then(rides => {
       response.json(rides);
+    })
+})
+
+app.get('/all', (request, response) => {
+  knex('disney_rides')
+    .join('disney_parks', 'disney_rides.disney_parks_id', '=', 'disney_parks.id')
+    .select('disney_parks.name as park_name', 'disney_rides.name as ride_name', 'disney_rides.thrill_level', 'disney_parks.size as park_size')
+    .orderBy("disney_rides.id")
+    .then(all => {
+      response.json(all);
     })
 })
 
